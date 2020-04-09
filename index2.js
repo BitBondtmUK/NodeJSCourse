@@ -35,6 +35,7 @@ app.use((error, req, res, next) =>{
     });
 });
 
+//Este es el segundo index.js del curso
 
 app.listen(_PORT, ()=>{
     console.log(`Mi servidor esta corriendo en el puerto ${_PORT}`);
