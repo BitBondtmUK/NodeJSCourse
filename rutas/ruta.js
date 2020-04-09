@@ -2,9 +2,7 @@ const express = require('express');
 const routes = express.Router();
 const producto = require('../controller/products');
 
-routes.get('/', (req, res) =>{
-    res.send('Estoy en seccion productos');
-});
+routes.get('/', producto.getProduct);
 
 routes.post('/', producto.addProduct);
 
