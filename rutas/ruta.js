@@ -6,9 +6,7 @@ routes.get('/', producto.getProduct);
 
 routes.post('/', producto.addProduct);
 
-routes.get('/:productid', (req, res) =>{
-    res.send('Obtengo informacion de un producto')
-})
+routes.get('/:id', producto.getProductid);
 
 routes.put('/:productid', (req, res) =>{
     res.send('Estoy en seccion de actualizar el producto')

@@ -35,6 +35,9 @@ app.get('/', (req, res) =>{
 app.use('/productos', prodrt);
 app.use('/orden', ordenrt);
 
+app.use(morgan('dev'));
+app.use(express.json());
+
 
 app.use((req, res, next) =>{
     const error = new Error('No se encuentra');

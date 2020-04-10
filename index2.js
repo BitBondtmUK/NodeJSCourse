@@ -4,6 +4,10 @@ const app = express();
 const bd = require('./config/database');
 const morgan = require('morgan');
 
+app.use(morgan('dev'))
+app.use(express.urlencoded({extended: false}))
+app.use(express.json());
+
 const prodrt = require('./rutas/ruta');
 const ordenrt = require('./rutas/orden');
 
@@ -13,9 +17,6 @@ app.get('/', (req, res) =>{
 
 app.use('/productos', prodrt);
 app.use('/orden', ordenrt);
-
-app.use(morgan('dev'))
-app.use(express.urlencoded({extended: false}))
 
 
 app.use((req, res, next) =>{

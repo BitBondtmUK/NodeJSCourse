@@ -2,14 +2,15 @@ const mongoose = require('mongoose');
 const product = mongoose.Schema({
     name:{
         type: String,
-        require: 'Name must have a value'
+        required: true
     },
     price:{
         type: Number,
-        require: 'Price must have a value'
+        required: true    
     },
     cantidad:{
-        type: Number
+        type: Number,
+        required: false
     }
 
 });
