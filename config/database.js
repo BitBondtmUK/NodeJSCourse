@@ -1,4 +1,6 @@
-/*const mongoose = require('mongoose');
+/*Este es mi codigo conectado a MongoDBAltas
+
+const mongoose = require('mongoose');
 const _URI = 'mongodb+srv://floren:<password>@cluster0-ugmu0.mongodb.net/test?retryWrites=true&w=majority';
 
 mongoose.connect(_URI, {useNewUrlParser: true, useUnifiedTopology: true})
