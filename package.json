@@ -20,5 +20,13 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BitBondtmUK/NodeJSCourse.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BitBondtmUK/NodeJSCourse/issues"
+  },
+  "homepage": "https://github.com/BitBondtmUK/NodeJSCourse#readme"
 }
