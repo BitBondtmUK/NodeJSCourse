@@ -17,4 +17,3 @@ routes.delete('/:productid',(req, res) =>{
 })
 
 module.exports = routes;
-

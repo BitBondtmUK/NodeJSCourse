@@ -3,12 +3,13 @@
 const express = require('express');
 const _PORT = 3000;
 const app = express();
+const morgan = require('morgan');
 const bd = require('./config/database');
+const users = require('./rutas/users');
 
 /*
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/src/vistas'));
-
 app.get('/', (req, res)=>{
     //res.json(data);
     //res.send('Hola Mundo desde express');
@@ -28,16 +29,25 @@ app.get('/', (req, res)=>{
 const prodrt = require('./rutas/ruta');
 const ordenrt = require('./rutas/orden');
 
+app.use(morgan('dev'));
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
+
 app.get('/', (req, res) =>{
     res.send('<h1>Bienvenido a nuestra aplicacion</h1>');
 });
-
+app.use('/login', users);
 app.use('/productos', prodrt);
 app.use('/orden', ordenrt);
 
-app.use(morgan('dev'));
-app.use(express.json());
 
+//app.use(express.urlencoded({extended: false}));
+
+// app.use(morgan(logger, {
+//     function (req, res) {
+//         return res;
+//     }
+// }))
 
 app.use((req, res, next) =>{
     const error = new Error('No se encuentra');
@@ -66,19 +76,13 @@ app.listen(_PORT, ()=>{
 
 /*
 app.use(express.static(path.join(__dirname, '/src', '/images')));
-
 app.use(express.static('/src'));
-
 app.use('/src', express.static('src'));
-
-
 var servidor = app.createServer(function(request, response) {
     var url = request.url;
     var parametros = ruta.parse(url, true);
-
     var nombre = parametros.name;
     var edad = parametros.age;
-
     if(url === '/contact'){
         response.write('<h1> Hola estoy en contacto </h1>');
         response.end();
@@ -95,8 +99,4 @@ var servidor = app.createServer(function(request, response) {
     
 }).listen(3000);
 console.log("Servidor corriendo");
-
 */
-
-
-
